@@ -6,13 +6,16 @@ const App = ({ slides }) => {
   useEffect(()=>{
     if(index===0){
      document.querySelector('[data-testid="button-prev"]').disabled=true;
+     document.querySelector('[data-testid="button-restart"]').disabled=true;
      document.querySelector('[data-testid="button-next"]').disabled=false;
     }
     else if(index===slides.length-1){
       document.querySelector('[data-testid="button-prev"]').disabled=false;
+      document.querySelector('[data-testid="button-restart"]').disabled=false;
       document.querySelector('[data-testid="button-next"]').disabled=true;
     }else{
       document.querySelector('[data-testid="button-prev"]').disabled=false;
+      document.querySelector('[data-testid="button-restart"]').disabled=false;
       document.querySelector('[data-testid="button-next"]').disabled=false;
     }
   },[index]);
